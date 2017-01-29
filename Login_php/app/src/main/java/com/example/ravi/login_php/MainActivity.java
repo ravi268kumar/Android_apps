@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.kosalgeek.asynctask.*;
@@ -18,6 +19,7 @@ public class MainActivity extends AppCompatActivity implements AsyncResponse, Vi
 
     EditText etUsername, etPassword;
     Button btnLogin;
+    TextView textRegi;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,10 +28,18 @@ public class MainActivity extends AppCompatActivity implements AsyncResponse, Vi
         etUsername =(EditText) findViewById(R.id.etUsername);
         etPassword =(EditText) findViewById(R.id.etPassword);
         btnLogin =(Button) findViewById(R.id.btnLogin);
+        textRegi =(TextView) findViewById(R.id.textRegi);
 
 
         btnLogin.setOnClickListener(this);
 
+        textRegi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1=new Intent(MainActivity.this,Register.class);
+                startActivity(intent1);
+            }
+        });
 
     }
 
